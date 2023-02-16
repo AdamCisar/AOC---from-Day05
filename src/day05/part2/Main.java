@@ -1,4 +1,4 @@
-package day05;
+package day05.part2;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -16,7 +16,7 @@ public class Main {
 	createArr(arr);
 		
 		try {
-			reader = new BufferedReader(new FileReader("C:\\Users\\adamc\\eclipse-workspace\\AdventOfCode_FromDay05\\src\\day05\\input.txt"));
+			reader = new BufferedReader(new FileReader("C:\\Users\\adamc\\eclipse-workspace\\AdventOfCode_FromDay05\\src\\day05\\part2\\input.txt"));
 			String line;
 			
 			while ((line = reader.readLine()) != null) {
