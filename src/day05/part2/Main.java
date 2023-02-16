@@ -37,7 +37,6 @@ public class Main {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		
 		printResult(arr);
 	}
 	
@@ -51,7 +50,7 @@ public class Main {
 
 	private static void moveCrate(String line) {
 		int numOfCrate, moveFrom, moveTo;
-		char crate = 0;
+		
 		
 		Pattern pattern = Pattern.compile("^move (\\d+) from (\\d+) to (\\d+)$");
         Matcher matcher = pattern.matcher(line);
@@ -62,10 +61,14 @@ public class Main {
 			moveFrom = Integer.valueOf(matcher.group(2));
 			moveTo = Integer.valueOf(matcher.group(3));
 			
-			for(int i=0; i<numOfCrate; i++) {
-			crate = arr.get(moveFrom-1).remove();
+			char[] crate = new char[numOfCrate];
 			
-			arr.get(moveTo-1).addFirst(crate);
+			for(int i=0; i<numOfCrate; i++) {
+				crate[i] = arr.get(moveFrom-1).remove();
+			}
+			
+			for(int i=crate.length-1; i>=0; i--) {
+				arr.get(moveTo-1).addFirst(crate[i]);
 			}
         }
 			
